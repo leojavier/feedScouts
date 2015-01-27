@@ -1,0 +1,94 @@
+@import 'colors.less';
+@media (max-width: 768px) {
+    .webmaster{
+        #domains{
+            .navbar-nav {
+                width: 100% !important;
+                padding-bottom: 2em;
+                a{
+                    background-color: transparent;
+                    display: inline-block !important;
+                    padding: 1em !important;
+                    width: 100%;
+                    border-bottom: thin solid #e7e7e7;
+                }
+            }
+        }
+    }
+}
+.webmaster{
+    text-align: center;
+    #top-navigation {
+        padding: 1em;
+        padding-bottom: 0;
+        border-bottom: thin solid #CCC;
+        text-align: right;
+        a{
+            font-weight: normal;
+            color:#000;
+        }
+    }
+    #brand-logo{
+        max-width: 200px;
+        margin: 2em auto;
+    }
+    .fa-instagram{
+        color:#CCC;
+        display: block;
+        font-size:2em;
+    }
+    h1{
+        color:@blue;
+    }
+    #domains{
+        list-style: none;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        margin: 0;
+        .navbar-toggle {
+            float: none;
+            margin-bottom: 40px;
+        }
+        .navbar-nav {
+            float: none;
+            margin: auto;
+            width: auto;
+            display: inline-block;
+            a{
+                background-color: transparent;
+                display: inline-block;
+                padding: 0.3em;
+            }
+            .active{
+                color: #000;
+                background-color: transparent;
+                font-weight: bold;
+                a{
+                    color: #000;
+                }
+            }
+        }
+    }
+    #filter{
+        margin: 1em auto;
+        float: none;
+        margin-top: 0;
+        .btn-group-justified {
+            border: thin solid #000;
+            div, button{
+                border: none;
+                background: #FFF;
+                font-weight: 300;
+                text-transform: uppercase;
+                font-size: 0.9em;
+            }
+            button{
+                padding: 1.2em 2.5em;
+            }
+            .btn-default {
+                background: #e6e6e6;
+                color:@blue;
+            }
+        }
+    }
+}

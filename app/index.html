@@ -63,7 +63,21 @@
         <script src="scripts/instafeed.js"></script>
         <script src="bower_components/OwlCarousel/owl-carousel/owl.carousel.js"></script>
         <!-- endbuild -->
-
+         <script>
+            var FeedScouts = {
+                targetElement:'#instafeed',
+                loadButton: {// Load more button options [display, Caption, Target-element]
+                    status: false,
+                    text: 'Load More',
+                    target: 'app-wrapper'
+                },
+                carousel:true,
+                columns:10,
+                rows:3,
+                pagesFrom:0,
+                pagesTo:3,
+            }
+        </script>
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->

@@ -1,5 +1,8 @@
 $(document).ready(function(){
     var App = {
+        Vars:{
+            containerHeight:0
+        },
         Options:{
             domain:'http://localhost:9000',
             targetElement:'#instafeed',
@@ -19,7 +22,7 @@ $(document).ready(function(){
                 limit: "60",
                 clientId: '6b92bcd408184a77b9f69928f298c2e4',
                 sortBy:'most-recent',
-                template: '<a id="{{id}}" href="{{link}}" target="_parent"><img src="{{image}}" target="blank"/></a>',
+                template: '<a id="{{id}}" href="{{link}}" target="_blank"><img src="{{image}}" target="blank"/></a>',
                 after:function(){
                     App.Controller.remove("904552836398132638_1667296354");
                     $children = $(App.Options.targetElement + " > a");
@@ -50,6 +53,10 @@ $(document).ready(function(){
                App.Controller.loadButton();
             }
             App.Options.feed.run();
+            $(document).resize(function(){
+                App.Controller.carouselNavPosition();
+                App.Vars.containerHeight = $(App.Options.targetElement).height();
+            });
         },
         Controller:{
             remove:function(elementID){

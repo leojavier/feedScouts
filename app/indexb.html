@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <script language="javascript" type="text/javascript">
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
+        function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        }
+    </script>
   </head>
   <body style="background:black;">
     <!--[if lt IE 10]>
@@ -63,7 +63,21 @@
         <script src="bower_components/bootstrap/js/tab.js"></script>
         <script src="scripts/instafeed.js"></script>
         <!-- endbuild -->
-
+        <script>
+            var FeedScouts = {
+                targetElement:'#instafeed',
+                loadButton: {// Load more button options [display, Caption, Target-element]
+                    status: false,
+                    text: 'Load More',
+                    target: 'app-wrapper'
+                },
+                carousel:true,
+                columns:10,
+                rows:3,
+                pagesFrom:0,
+                pagesTo:3,
+            }
+        </script>
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->

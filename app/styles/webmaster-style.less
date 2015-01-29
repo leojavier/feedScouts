@@ -19,13 +19,69 @@
 .webmaster{
     text-align: center;
     #top-navigation {
-        padding: 1em;
         padding-bottom: 0;
         border-bottom: thin solid #CCC;
         text-align: right;
-        a{
-            font-weight: normal;
-            color:#000;
+        .row{
+            p{
+                display: inline-block;
+            }
+            margin:0;
+                div{
+                    padding: 0;
+                }
+            }
+            a{
+                font-weight: normal;
+                color:#000;
+            }
+        .btn-default {
+            color: #333;
+            margin-left: 10px;
+            background-color: transparent;
+            border-color: transparent;
+            border: none;
+            border-radius: 0;
+            font-size: 1.5em;
+            &:hover, &:focus{
+                background-color: #111;
+                color:#FFF;
+            }
+        }
+        .dropdown-menu {
+            left:auto;
+            right: 0;
+            margin: 0;
+            float: none;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            background: #000;
+            a{
+                color:#FFF;
+                padding: 0.7em 1em;
+                padding-right: 50px;
+                margin: 5px;
+                font-size: 0.9em;
+                font-weight: 100;
+                strong{
+                    color:#FFF;
+                    font-size:0.9em;
+                    span{
+                        font-size:2em;
+                    }
+                }
+                .on{
+                    color:#8cc63f;
+                }
+                .off{
+                    color:#c1272d;
+                }
+                &:hover{
+                    color:#222;
+                    background: #e6e6e6;
+                }
+            }
         }
     }
     #brand-logo{

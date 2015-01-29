@@ -25,11 +25,28 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <nav id="top-navigation">
-        <p>Welcome user, <a href="javascript:void(0)">Logout</a></p>
+        <div class="row">
+         <p>Welcome user, <a href="javascript:void(0)">Logout</a></p>
+         <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <i class="fa fa-cog"></i>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#"  data-toggle="modal" data-target=".bs-example-modal-lg"> WalksOfItaly</a></li>
+      <li><a href="#"><strong class="on"><span>&bull;</span></strong> Load more button [ <strong class="on">ON</strong> ]</a></li>
+      <li><a href="#">Image size <strong>[ 200 x 200 ]</strong></a></li>
+      <li><a href="#">Image Limit <strong>[ 60 ]</strong></a></li>
+      <li><a href="#"><strong class="off"><span>&bull;</span></strong> Load more button [ <strong class="off">OFF</strong> ]</a></li>
+      <li><a href="#">Callback  <strong>[ redirect ]</strong></a></li>
+      <li><a href="#">Sort by <strong>[ Most recent ]</strong></a></li>
+      <li><a href="#"><i class="fa fa-user"></i> User Management</a></li>
+    </ul>
+  </div>
+        </div>
     </nav>
     <img id="brand-logo" src="images/walks-of-italy-logo.png" alt="Walks of Italy Logo">
     <!-- <i class="fa fa-instagram"></i> -->
-    <h1>#WalksOfItaly</h1>
+    <h1># WalksOfItaly</h1>
     <p><strong>What's happening right now! </strong></p>
    <!-- <ul id="domains">
         <li><a class="active" href="javascript:void(0)">Rome</a>/</li>
@@ -83,6 +100,7 @@
         </div>
        </div>
     </div>
+    <!-- Large modal -->
     <div id="app-wrapper" class="container">
          <div id="instafeed"></div>
     </div>
@@ -138,5 +156,18 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+        <!-- Modal -->
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <p>This is the content for the modal</p>
+            </div>
+          </div>
+        </div>
+        <!--End Modal -->
 </body>
 </html>

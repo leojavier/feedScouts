@@ -16,14 +16,71 @@
   text-align: center;
 }
 .webmaster #top-navigation {
-  padding: 1em;
   padding-bottom: 0;
   border-bottom: thin solid #CCC;
   text-align: right;
 }
+.webmaster #top-navigation .row {
+  margin: 0;
+}
+.webmaster #top-navigation .row p {
+  display: inline-block;
+}
+.webmaster #top-navigation .row div {
+  padding: 0;
+}
 .webmaster #top-navigation a {
   font-weight: normal;
   color: #000;
+}
+.webmaster #top-navigation .btn-default {
+  color: #333;
+  margin-left: 10px;
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: 1.5em;
+}
+.webmaster #top-navigation .btn-default:hover,
+.webmaster #top-navigation .btn-default:focus {
+  background-color: #111;
+  color: #FFF;
+}
+.webmaster #top-navigation .dropdown-menu {
+  left: auto;
+  right: 0;
+  margin: 0;
+  float: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: #000;
+}
+.webmaster #top-navigation .dropdown-menu a {
+  color: #FFF;
+  padding: 0.7em 1em;
+  padding-right: 50px;
+  margin: 5px;
+  font-size: 0.9em;
+  font-weight: 100;
+}
+.webmaster #top-navigation .dropdown-menu a strong {
+  color: #FFF;
+  font-size: 0.9em;
+}
+.webmaster #top-navigation .dropdown-menu a strong span {
+  font-size: 2em;
+}
+.webmaster #top-navigation .dropdown-menu a .on {
+  color: #8cc63f;
+}
+.webmaster #top-navigation .dropdown-menu a .off {
+  color: #c1272d;
+}
+.webmaster #top-navigation .dropdown-menu a:hover {
+  color: #222;
+  background: #e6e6e6;
 }
 .webmaster #brand-logo {
   max-width: 200px;

@@ -15,11 +15,6 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <script language="javascript" type="text/javascript">
-        function resizeIframe(obj) {
-            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-        }
-    </script>
   </head>
   <body style="background:black;">
     <!--[if lt IE 10]>
@@ -27,9 +22,8 @@
     <![endif]-->
 
 
-    <div class="container-fluid">
-    <iframe style="width:100%; padding:0;" src="index.html" frameborder="0" scrolling="no" onload='javascript:resizeIframe(this);'></iframe>
-    </div>
+    <iframe style="width:100%; padding:0; height:auto;" src="index.html" frameborder="0" scrolling="no" onload='javascript:FeedScouts.resizeIframe(this);'></iframe>
+    <p style="color:#FFF;">This is my text</p>
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -71,11 +65,14 @@
                     text: 'Load More',
                     target: 'app-wrapper'
                 },
-                carousel:true,
+                carousel:false,
                 columns:10,
                 rows:3,
                 pagesFrom:0,
                 pagesTo:3,
+                resizeIframe: function (obj) {
+                    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+                }
             }
         </script>
         <!-- build:js({app,.tmp}) scripts/main.js -->

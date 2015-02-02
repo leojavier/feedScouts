@@ -15,14 +15,14 @@ $(document).ready(function(){
             columns:10,
             rows:3,
             pagesFrom:0,
-            pagesTo:4,
+            pagesTo:1,
             feed: new Instafeed({// Feed options
                 get: 'tagged',
-                tagName: 'f1',    
+                tagName: 'redbull',    
                 limit: "60",
                 clientId: '6b92bcd408184a77b9f69928f298c2e4',
                 sortBy:'most-recent',
-                template: '<a id="{{id}}" href="{{link}}" target="_blank"><img src="{{image}}" target="blank"/></a>',
+                template: '<a id="{{id}}" class="image-container" href="{{link}}" target="_blank"><img src="{{image}}" target="blank"/></a>',
                 after:function(){
                     App.Controller.remove("904552836398132638_1667296354");
                     $children = $(App.Options.targetElement + " > a");
@@ -53,10 +53,25 @@ $(document).ready(function(){
                App.Controller.loadButton();
             }
             App.Options.feed.run();
-            $(document).resize(function(){
+            $(window.parent.window).resize(function(){
+                $('#instafeed').css('opacity',0);
                 App.Controller.carouselNavPosition();
                 App.Vars.containerHeight = $(App.Options.targetElement).height();
+                $(window.parent.document.body).height($(App.Options.targetElement).height());
+                $(App.Options.targetElement).parent().height($(App.Options.targetElement).height())
+                window.parent.document.body.height =$(App.Options.targetElement).height();
+                window.resizeEvt;
+                $(window).resize(function()
+                {
+                    clearTimeout(window.resizeEvt);
+                    window.resizeEvt = setTimeout(function()
+                    {
+                        location.reload();
+                        console.log('test');
+                    }, 500);
+                });
             });
+            
         },
         Controller:{
             remove:function(elementID){
@@ -76,7 +91,7 @@ $(document).ready(function(){
                 $('html, #app-wrapper').height($(App.Options.targetElement).height());
             },
             carouselNavPosition:function(){
-                $('.owl-prev, .owl-next').css('top', (-$(App.Options.targetElement).height()/2)-$('.owl-prev, .owl-next').height());
+                $('.owl-prev, .owl-next').css('top', ($(App.Options.targetElement).height()/2)-$('.owl-prev, .owl-next').height());
             },
             setters:function(){
                 // Scan the connection string properties
@@ -93,6 +108,11 @@ $(document).ready(function(){
                 var carousel = $(App.Options.targetElement).owlCarousel({
                   navigation : true, // Show next and prev buttons
                   //autoPlay:2000,
+                     itemsDesktop : [1199,6],
+                    itemsDesktopSmall : [980,5],
+                    itemsTablet: [768,4],
+                    itemsTabletSmall: false,
+                    itemsMobile : [479,2],
                   scrollPerPage:true,
                   slideSpeed : 300,
                   paginationSpeed : 400,

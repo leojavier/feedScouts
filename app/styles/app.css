@@ -3,7 +3,8 @@ html,
 #app,
 #app-wrapper {
   padding: 0;
-  background-color: #fafafa;
+  background-color: transparent;
+  height: auto;
 }
 #instafeed {
   text-align: center;
@@ -27,7 +28,7 @@ html,
 }
 #instafeed .owl-prev {
   float: left;
-  position: relative;
+  position: absolute;
   left: 1em;
   z-index: 3000;
   background: rgba(0, 0, 0, 0.4);
@@ -39,7 +40,7 @@ html,
 }
 #instafeed .owl-next {
   float: right;
-  position: relative;
+  position: absolute;
   right: 1em;
   z-index: 3000;
   background: rgba(0, 0, 0, 0.4);

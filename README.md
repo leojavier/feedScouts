@@ -46,3 +46,4 @@ $ grunt build
 
  - Connect the database and Admin panel
 
+![alt tag](http://www.leojavier.com/assets/images/leojavier-logo-solid.png)

@@ -57,7 +57,7 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.app %>/{,*/}*.html',
+          '<%= config.app %>/{,*/}*.php',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
@@ -140,7 +140,7 @@ module.exports = function (grunt) {
       all: {
         options: {
           run: true,
-          urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
+          urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.php']
         }
       }
     },
@@ -164,7 +164,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         ignorePath: /^\/|\.\.\//,
-        src: ['<%= config.app %>/index.html'],
+        src: ['<%= config.app %>/index.php'],
         exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
       }
     },
@@ -191,7 +191,7 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= config.dist %>'
       },
-      html: '<%= config.app %>/index.html'
+      html: '<%= config.app %>/index.php'
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
@@ -203,7 +203,7 @@ module.exports = function (grunt) {
           '<%= config.dist %>/styles'
         ]
       },
-      html: ['<%= config.dist %>/{,*/}*.html'],
+      html: ['<%= config.dist %>/{,*/}*.php'],
       css: ['<%= config.dist %>/styles/{,*/}*.css']
     },
 
@@ -246,13 +246,13 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.dist %>',
-          src: '{,*/}*.html',
+          src: '{,*/}*.php',
           dest: '<%= config.dist %>'
         }]
       }
     },
 
-    // By default, your `index.html`'s <!-- Usemin block --> will take care
+    // By default, your `index.php`'s <!-- Usemin block --> will take care
     // of minification. These next options are pre-configured if you do not
     // wish to use the Usemin blocks.
     // cssmin: {
@@ -289,7 +289,6 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
-            '{,*/}*.html',
             'styles/fonts/{,*/}*.*'
           ]
         }, {
@@ -298,7 +297,20 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           dot: true,
+          cwd: '<%= config.app %>',
+          src: '{,*/}*.php',
+          dest: '<%= config.dist %>'
+        }, 
+        {
+          expand: true,
+          dot: true,
           cwd: 'bower_components/bootstrap/dist',
+          src: 'fonts/*',
+          dest: '<%= config.dist %>'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/fontawesome',
           src: 'fonts/*',
           dest: '<%= config.dist %>'
         }]
@@ -309,6 +321,17 @@ module.exports = function (grunt) {
         cwd: '<%= config.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+     final: {
+          expand: true,
+          dot: true,
+          cwd: '<%= config.dist %>',
+          dest: 'dist/',
+          src: ['{,*/}*.php'],
+          rename: function(dest, src) {
+            return dest + src.replace('.php','.php');
+          }
+        
       }
     },
 
@@ -379,8 +402,9 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',
     'rev',
-    'usemin',
-    'htmlmin'
+    'usemin'
+    //'copy:final'
+    //'htmlmin'
   ]);
 
   grunt.registerTask('default', [

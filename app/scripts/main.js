@@ -101,6 +101,7 @@ $(document).ready(function(){
                 FeedScouts.loadButton.text ? App.Options.loadButton.text = FeedScouts.loadButton.text : App.Options.loadButton.text
                 FeedScouts.loadButton.target ? App.Options.loadButton.target = FeedScouts.loadButton.target : App.Options.loadButton.target;
                 FeedScouts.carousel ? App.Options.carousel = FeedScouts.carousel : App.Options.carousel;
+                FeedScouts.rows ? App.Options.rows = FeedScouts.rows : App.Options.rows;
             }
         },
         Utilities:{
